@@ -3,6 +3,8 @@ import "./App.css";
 import colors from "./utils/colors";
 import author from "./json/quotes.json"
 import QuoteBox from "./components/QuoteBox"
+import Author from "./components/Author";
+import Botton from "./components/Botton";
 
 function App() {
   const getRandomElement = (arr) => {
@@ -30,13 +32,23 @@ function App() {
 
   return (
     <div className="App" style={obStyle}>
-      <QuoteBox 
-        randomAuthor={randomAuthor} 
+      <div className="card">
+        <QuoteBox 
+          randomAuthor={randomAuthor} 
+          randomColors={randomColors}
+          getRandomAll={getRandomAll}
+        /> 
+        <Author
+         randomAuthor={randomAuthor} 
+         randomColors={randomColors}
+         />
+        <Botton
         randomColors={randomColors}
-        getRandomAll={getRandomAll}
-      /> 
+        getRandomAll={getRandomAll} 
+        />
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
